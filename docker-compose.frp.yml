@@ -1,0 +1,9 @@
+services:
+
+  backend:
+    networks:
+      - frp-net
+
+networks:
+  frp-net:
+    external: true

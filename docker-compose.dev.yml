@@ -1,0 +1,14 @@
+services:
+
+  postgres:
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5141}:5432"
+    networks:
+      - 5142026_network
+
+  backend:
+    command: sh scripts/start-dev.sh
+    ports:
+      - "127.0.0.1:${BACKEND_PORT:-5142}:8000"
+    volumes:
+      - ./backend:/app
